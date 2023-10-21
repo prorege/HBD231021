@@ -28,6 +28,18 @@ $('document').ready(function(){
 			$('#play').fadeIn('slow');
 		});
 	});
+	$('#turn_on').click(function(){
+		$('#none').addClass('after');
+		$('#bulb_red').addClass('bulb-glow-red');
+		$('#bulb_blue').addClass('bulb-glow-blue');
+		$('#bulb_green').addClass('bulb-glow-green');
+		$('#bulb_pink').addClass('bulb-glow-pink');
+		$('#bulb_orange').addClass('bulb-glow-orange');
+		$('body').addClass('peach');
+		$(this).fadeOut('slow').delay(5000).promise().done(function(){
+			$('#play').fadeIn('slow');
+		});
+	});
 	$('#play').click(function(){
 		var audio = $('.song')[0];
         audio.play();
@@ -173,12 +185,12 @@ $('document').ready(function(){
         var i;
 
         function msgLoop (i) {
-            $("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
+            $("p:nth-child("+i+")").fadeOut('slow').delay(1000).promise().done(function(){
                 i=i+1;
-                $("p:nth-child("+i+")").fadeIn('slow').delay(3000);
+                $("p:nth-child("+i+")").fadeIn('slow').delay(4000);
                 if(i==50){
 					$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-						$('.cake').fadeIn('fast');
+						$('').fadeIn('fast');
 		
 						// 이미지 엘리먼트를 생성하고 설정합니다.
 						var image = $('<img>');
